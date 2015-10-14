@@ -6,7 +6,7 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		return 0;
+		else
+			return Integer.parseInt(text);
 	}
-
 }
