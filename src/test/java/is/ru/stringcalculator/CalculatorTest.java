@@ -29,4 +29,8 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
+    @Test
+    public void testNewLineMultipleNumbers(){
+    	assertEquals(9, Calculator.add("2,3\n4"));
+    }
 }
