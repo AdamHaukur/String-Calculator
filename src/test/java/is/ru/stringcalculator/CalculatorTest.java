@@ -33,4 +33,9 @@ public class CalculatorTest {
     public void testNewLineMultipleNumbers(){
     	assertEquals(9, Calculator.add("2,3\n4"));
     }
+
+    @Test
+    public void testDelimiterNumbers(){
+    	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
 }
