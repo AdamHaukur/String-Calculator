@@ -44,5 +44,30 @@ public class CalculatorTest {
     	assertEquals(2, Calculator.add("1001,2"));
     }
 
-   
+    @Test
+	public void testNegativeNumbers() {
+		try 
+		{
+			Calculator.add("-1,2");
+		}
+
+		catch (RuntimeException exeption)
+		{
+			assertEquals("Negatives not allowed: -1", exeption.getMessage());
+		}
+	}	
+
+    @Test
+	public void testNegativeMultipleNumbers() {
+		try 
+		{
+			Calculator.add("2,-4,3,-5");
+		}
+
+		catch (RuntimeException exeption)
+		{
+			assertEquals("Negatives not allowed: -4,-5", exeption.getMessage());
+		}
+	}	
+  
 }
