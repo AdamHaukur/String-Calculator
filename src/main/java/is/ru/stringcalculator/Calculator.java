@@ -34,11 +34,18 @@ public class Calculator {
 	
     private static int sum(String[] numbers){
  	    int total = 0;
+ 	    ArrayList<Integer> negative = new ArrayList<Integer>();
         for(String number : numbers){
-        	 if(toInt(number) < 1000){
+        	if(toInt(number) < 0){
+        		negative.add(toInt(number));
+        	}
+        	else if(toInt(number) < 1000){
         		total += toInt(number);
         	}
 		}
+		if (negative.size() < 0) {
+       		 throw new RuntimeException("Negatives not allowed: " + negative.toString());
+   		 }
     	return total;
     }
 }
