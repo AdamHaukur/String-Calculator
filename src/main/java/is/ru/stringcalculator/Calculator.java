@@ -1,5 +1,8 @@
 package is.ru.stringcalculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
 	public static String del = ",|\n|;";
 
@@ -32,8 +35,10 @@ public class Calculator {
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
-		    total += toInt(number);
+        	 if(toInt(number) < 1000){
+        		total += toInt(number);
+        	}
 		}
-		return total;
+    	return total;
     }
 }
